@@ -76,18 +76,65 @@ ElementUI add components to your application (such as buttons, cards, and a lot 
 ## yarn install vue-apollo. But not vue add apollo!
 !!!ATTENTION!!!
 Vue CLI 4.0.0 does not support Vue Apollo for vue 3. Therefore Apollo had to be manually added with yarn (or npm in your case)
+```
+yarn add graphql graphql-tag @apollo/client
+```
+and add the following code into ./src/index.js
+```
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
 
-Will add the documentation of what command and which files had to be modified to adapt vue apollo 4 with vue 3.
-In the mean time hold on! :D
+// HTTP connection to the API
+const httpLink = createHttpLink({
+  // You should use an absolute URL here
+  uri: 'http://localhost:3020/graphql',
+})
+
+// Cache implementation
+const cache = new InMemoryCache()
+
+// Create the apollo client
+const apolloClient = new ApolloClient({
+  link: httpLink,
+  cache,
+})
+```
+Then it's time to add apollo composable
+```
+yarn add @vue/apollo-composable
+```
+and change create app
+```
+//from this
+createapp().use(router).use(vuex).mount('#app')
+//to this
+const app = createApp({
+  setup () {
+    provide(DefaultApolloClient, apolloClient)
+  },
+
+  render: () => h(App),
+})
+
+app..use(router).use(vuex).mount('#app')
+```
+
 
 ## npm install tailwindCSS
 TailwindCSS was installed with the following command
 ```
-npm install tailwindCSS
+npm install tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 ```
-
-For some of you there migth be compatibilty problems. If that is the case then I'll post in the near future how to overcome all of them and succcessfully installing TailwindCSS :P
-
+and the next to create a tailwind configuration file:
+```
+npx tailwindcss init -p
+```
+Next, a index.css file was created in plugins folder and imported to index.js.
+```
+/* ./plugins/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 # Conclusion
 This read me is not complete yet.
 There are missing part but I plan to collect all the information and post them here on this readme.

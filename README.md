@@ -102,7 +102,7 @@ Then it's time to add apollo composable
 ```
 yarn add @vue/apollo-composable
 ```
-and change create app
+and change the createapp function in index.js
 ```
 //from this
 createapp().use(router).use(vuex).mount('#app')

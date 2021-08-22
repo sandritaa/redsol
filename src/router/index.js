@@ -19,7 +19,7 @@ const routes = [
          *      in order to use components you really need to know what you are using it for.
          * 
          *  The case about is probably going to be the only case we need to use,
-         *     so don't let yourself confuse you by it. Use: ' component: ()=>import([path...]) '
+         *     so don't let yourself confuse you by it. Use: 'component: ()=>import([path...]) '
          */
         components:{
             default: ()=>import(/* webpackChunkName: "home" */ '../layouts/Home.vue')
@@ -46,6 +46,7 @@ const routes = [
         path:'/profile',
         name:'profile',
         component: ()=>import(/* webpackChunkName: "profile" */ '../layouts/Profile.vue'),
+        redirect:'/profile',
         children:[
             {
                 path:'',

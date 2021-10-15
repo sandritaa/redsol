@@ -10,59 +10,64 @@
             <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Login</a></el-menu-item>
         </el-menu>
 
-        <el-carousel :interval="4000" type="card" height="500px">
+        <el-carousel :interval="3000" type="card" height="500px">
           <el-carousel-item v-for="item in 3" :key="item">
             <h3 class="medium">{{ item }}</h3>
           </el-carousel-item>
         </el-carousel>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem autem, minus laudantium molestiae non. Quae quasi eveniet labore, voluptates, quas harum minus hic, id assumenda blanditiis molestias nemo. Voluptatem perferendis provident nostrum ratione. Repellendus laboriosam incidunt dolor libero perferendis, tenetur dolorum praesentium possimus magni, reiciendis culpa in iure porro, explicabo quibusdam aperiam provident. Dolorum culpa quae dicta quia recusandae laudantium modi voluptas animi aperiam fugiat tempore unde sed tempora eaque et, iste maiores harum fugit cupiditate eligendi provident. Cumque ad praesentium possimus quae explicabo sunt non natus ratione quos, hic officia amet molestiae temporibus maxime sint unde numquam nostrum.
-       rovident nostrum ratione. Repellendus laboriosam incidunt dolor libero perferendis, tenetur dolorum praesentium possimus magni, reiciendis culpa in iure porro, explicabo quibusdam aperiam provident. Dolorum culpa quae dicta quia recusandae laudantium modi voluptas animi aperiam fugiat tempore unde sed tempora eaque et, iste maiores harum fugit cupiditate eligendi provident. Cumque ad praesentium possimus quae explicabo sunt non natus ratione quos, hic officia amet molestiae temporibus maxime sint unde numquam nostrum.
+       rovident nostrum ratione. Lorem ipsum dolor sit. Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
        
         <div class="demo-image">
             <div class="block" v-for="fit in fits" :key="fit">
                 <!-- <span class="demonstration">{{ fit }}</span> -->
                 <el-image
-                    style="width: 600px; height: 600px"
+                    style="width: 600px; height: 500px"
                     :src="url"
                     :fit="fit">
                 </el-image>
             </div>
         </div>
 
-        <div class="one-image">
-            <div class="block" v-for="fit in fits" :key="fit">
-            <!-- <span class="demonstration">{{ fit }}</span> -->
-                <el-image
-                    style="width: 200px; height: 200px"
-                    :src="url"
-                    :fit="fit">
-                </el-image>
-            </div>
-        </div>
 
-        <div class="two-image">
-            <div class="block" v-for="fit in fits" :key="fit">
-            <!-- <span class="demonstration">{{ fit }}</span> -->
-                <el-image
-                    style="width: 200px; height: 200px"
-                    :src="url"
-                    :fit="fit">
-                </el-image>
-            </div>
-        </div>
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
 
-        <div class="three-image">
-            <div class="block" v-for="fit in fits" :key="fit">
+        <!-- <div class="one-image">
+            <div class="block" v-for="fit in fits" :key="fit"> -->
             <!-- <span class="demonstration">{{ fit }}</span> -->
-                <el-image
+                <!-- <el-image
                     style="width: 200px; height: 200px"
                     :src="url"
                     :fit="fit">
                 </el-image>
             </div>
-        </div>
+        </div> -->
+
+        <!-- <div class="two-image">
+            <div class="block" v-for="fit in fits" :key="fit"> -->
+            <!-- <span class="demonstration">{{ fit }}</span> -->
+                <!-- <el-image
+                    style="width: 200px; height: 200px"
+                    :src="url"
+                    :fit="fit">
+                </el-image>
+            </div>
+        </div> -->
+
+        <!-- <div class="three-image">
+            <div class="block" v-for="fit in fits" :key="fit"> -->
+            <!-- <span class="demonstration">{{ fit }}</span> -->
+                <!-- <el-image
+                    style="width: 200px; height: 200px"
+                    :src="url"
+                    :fit="fit">
+                </el-image>
+            </div>
+        </div> -->
 
         <el-footer class="bg-blue-500">
             RedSol        
@@ -100,59 +105,80 @@ import{ref} from 'vue'
         height: 100vh;
     } */
 
-   .el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
+    .el-carousel__item h3 {
+    /* color: #475669; 
+    font-size: 14px; 
     opacity: 0.75;
-    line-height: 200px;
+    line-height: 200px; */
     margin: 0;
     margin-top: 10px;
-  }
+    background-image: url("1.jpg");
+    background-size:cover;
+    overflow: hidden;
+  } 
 
   .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
+    background-image: url("1.jpg");
+    background-size:cover;
   }
 
   .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
+    background-image: url("1.jpg");
+    background-size:cover;
   }
 
   p{
-      width: 640px;
+      width: 480px;
       height: 300px;
       margin-left: 60px; 
       margin-top:150px;
       margin-bottom:320px;
   }
 
-  .demo-image{
+.demo-image{ 
     
       /* margin-left: 1000px;  */
-      position: relative;
-      left: 800px;
-      top: -700px;
+      position: sticky;
+      /* left: -50px; */
+      margin-top: -620px;
+      margin-left: 640px;
   }
 
-  .one-image{
-      position: relative;
-      left: 300px;
-      top: -587px; 
-  }
+  .dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+  
+   .one-image{
+      position: sticky;
+      margin-left: 300px;
+      margin-top: 170px;  
+      margin-bottom: 30px; 
+    
+   }
 
    .two-image{
-      position: relative;
-      left: 650px;
-      top: -793px; 
-  }
+      position: sticky;
+      /* background-color:cornflowerblue; */
+      margin-left: 600px;
+      margin-top: -208px; 
+       margin-bottom: 30px; 
+   }
    .three-image{
-      position: relative;
-      left: 990px;
-      top: -1000px; 
-  }
+      position: sticky;
+      /* color: cornflowerblue; */
+      margin-left: 890px;
+      margin-top: -206px;  
+     margin-bottom: 30px;
+   } 
 
   .el-footer{
 
     height: 230px;  
-    margin-top: -900px;
+    margin-top: 50px;
+    /* margin-top: -900px; */
   }
    </style>

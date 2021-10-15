@@ -38,10 +38,10 @@ const routes = [
              */
             {
                 path: "",
-                name: "BackendTest",
+                name: "Content",
                 component: () =>
                     import(
-                        /* webpackChunkName: "Backend" */ "../views/profileContent.vue"
+                        /* webpackChunkName: "Content" */ "../views/profileContent.vue"
                     ),
             },
         ],

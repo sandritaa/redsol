@@ -32,9 +32,9 @@
         </el-header>
 
         <el-main>
-            <el-card>
+            <!-- <el-card> -->
                 <router-view></router-view>
-            </el-card>
+            <!-- </el-card> -->
         </el-main>
 
         <el-footer id="footer">
@@ -72,12 +72,14 @@
                     </el-col>
                 </el-row>
             </el-card>
-
-            <el-row align="middle" justify="space-around">
+                <h6>  
+                    RedSol Ⓒ
+                </h6>
+            <!-- <el-row align="middle" justify="space-around">
                 <p>
                     copyright
                 </p>
-            </el-row>
+            </el-row> -->
         </el-footer>
     </el-container>
 </template>
@@ -99,5 +101,9 @@ export default {
 <style>
 #footer {
     padding: 1rem;
+}
+
+h6{
+   margin-left:650px;
 }
 </style>

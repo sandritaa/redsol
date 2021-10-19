@@ -6,32 +6,51 @@
           </el-carousel-item>
         </el-carousel>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem autem, minus laudantium molestiae non. Quae quasi eveniet labore, voluptates, quas harum minus hic, id assumenda blanditiis molestias nemo. Voluptatem perferendis provident nostrum ratione. Repellendus laboriosam incidunt dolor libero perferendis, tenetur dolorum praesentium possimus magni, reiciendis culpa in iure porro, explicabo quibusdam aperiam provident. Dolorum culpa quae dicta quia recusandae laudantium modi voluptas animi aperiam fugiat tempore unde sed tempora eaque et, iste maiores harum fugit cupiditate eligendi provident. Cumque ad praesentium possimus quae explicabo sunt non natus ratione quos, hic officia amet molestiae temporibus maxime sint unde numquam nostrum.
-       rovident nostrum ratione. Lorem ipsum dolor sit. Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <div class= "about">
+           
+       <p>RedSol es una asociación dirigida por jóvenes voluntarios con liderazgo que busca impactar vidas transmitiendo y promoviendo los valores a través de diferentes programas continuos y eventos masivos.  
+        <br><br>   
+       <span style="color: rgb(134, 151, 247)"> Visión: </span> RedSol busca ser el referente internacional de voluntariado para jóvenes; ser un eje de apoyo integral para instituciones que educan y cuidan a la niñez.
+             <br><br> 
+        <span style="color: rgb(134, 151, 247)">  Misión: </span>Impactar la vida de niños y jóvenes para contribuir a formar un mundo más esperanzador, alegre y solidario.
+              <br><br> 
+       <span style="color: rgb(134, 151, 247)">   Valores: </span>Alegría, Solidaridad, Esperanza, Liderazgo, Gratitud</p> 
+       </div>
 
         <div class="demo-image">
             <div class="block" v-for="fit in fits" :key="fit"> 
-                 <el-image
-                    style="width: 600px; height: 500px"
+                 <!-- <el-image
+                  style="width: 600px; height: 500px" 
                     :src="url"
                     :fit="fit">
-                </el-image>
+                </el-image> -->
             </div>
         </div> 
 
 
 
         <div class="one-image">
-         This text is the content of the box. 
+            <br>
+         <span style="color: rgb(134, 151, 247)">+140 Centros de acogida</span>
+        
         </div> 
 
         <div class="two-image">
-         This text is the content of the box. 
+            <br>
+        <span style="color: rgb(134, 151, 247)">+2450 Voluntarios</span>
+         
         </div> 
 
         <div class="three-image">
-         This text is the content of the box. 
+            <br>
+        <span style="color: rgb(134, 151, 247)"> +7093 Menores atendidos</span>
+        
+        </div> 
+
+         <div class="four-image">
+             <br>
+         <span style="color: rgb(134, 151, 247)">+200 Empresas</span>
+    
         </div> 
         <!-- <div class="one-image">
             <div class="block" v-for="fit in fits" :key="fit"> 
@@ -76,7 +95,7 @@ export default {
         activeIndex: '1',
         activeIndex2: '1',
         fits: ['contain'],
-        url: 'https://htmlcolorcodes.com/colors/light-gray/'
+        url: "/5.jpg"
       };
     },
     methods: {
@@ -92,7 +111,7 @@ export default {
     .el-carousel__item h3 {
     margin: 0;
     margin-top: 10px;
-    background-image: url("1.jpg");
+    /* background-image: url("2.jpg"); */
     background-size:cover;
     overflow: hidden;
   } 
@@ -103,9 +122,16 @@ export default {
   }
 
   .el-carousel__item:nth-child(2n+1) {
-    background-image: url("1.jpg");
+    background-image: url("3.jpg");
     background-size:cover;
   }
+
+  .el-carousel__item:nth-child(3n) {
+    background-image: url("2.jpg");
+    background-size:cover;
+  }
+
+ 
 
     p{
       width: 480px;
@@ -115,40 +141,83 @@ export default {
       margin-bottom:320px;
   }
 
-.demo-image{ 
+  .demo-image{
+       position: sticky; 
+       width: 600px; 
+       height: 500px;
+      /* background-color:cornflowerblue; */
+       background-image: url("5.jpg");
+       background-size:cover;
+       margin-left: 700px;
+       margin-top: -608px; 
+       margin-bottom: 30px; 
+  }
+/* 
+.demo-image{  */
     
       /* margin-left: 1000px;  */
-      position: sticky;
+      /* position: sticky; */
       /* left: -50px; */
-      margin-top: -620px;
+      /* background-image: url("5.jpg");
+      background-size:cover; */
+      /* margin-top: -620px;
       margin-left: 640px;
-  }
+  } */
 
 
   .one-image{
   width: 200px;
-  border: 5px solid green;
+  height: 187px;
+  background-color:rgb(255, 255, 255);
+  background-image: url("sc1.jpg");
+   background-repeat: no-repeat;
+  background-position: center  top;
+  border: 5px solid rgb(238, 198, 113);
   padding: 50px;
-  margin-left: 300px;
+  margin-left: 150px;
   margin-top: 170px;  
   margin-bottom: 30px; 
 }
 
  .two-image{
   width: 200px;
-  border: 5px solid green;
+  height: 187px;
+  border: 5px solid rgb(238, 198, 113);
+  background-color:rgb(255, 255, 255);
+  background-image: url("sc2.jpg");
+   background-repeat: no-repeat;
+     background-position:center top ;
   padding: 50px;
-  margin-left: 600px;
-  margin-top: -236px; 
+  margin-left: 450px;
+  margin-top: -212px; 
   margin-bottom: 30px; 
 }
 
  .three-image{
   width: 200px;
-  border: 5px solid green;
+  height: 187px;
+  background-color:rgb(255, 255, 255);
+  background-image: url("sc3.jpg");
+   background-repeat: no-repeat;
+     background-position: center  top;
+  border: 5px solid rgb(238, 198, 113);
   padding: 50px;
-  margin-left: 890px;
-  margin-top: -236px;  
+  margin-left: 740px;
+  margin-top: -212px;  
+  margin-bottom: 30px;
+}
+
+ .four-image{
+  width: 200px;
+  height: 187px;
+  background-color:rgb(255, 255, 255);
+  background-image: url("sc4.jpg");
+  background-repeat: no-repeat;
+  background-position: center  top;
+  border: 5px solid rgb(238, 198, 113);
+  padding: 50px;
+  margin-left: 1025px;
+  margin-top: -212px;  
   margin-bottom: 30px;
 }
   /* .one-image{

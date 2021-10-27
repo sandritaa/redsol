@@ -26,6 +26,7 @@ const routes = [
             default: () =>
                 import(
                     /* webpackChunkName: "home" */ "../layouts/HomePage.vue"
+
                 ),
         },
         /**     CHILDREN PATHS
@@ -37,35 +38,49 @@ const routes = [
              *  Atomatically inject the childcomponent if does not have a path
              */
             {
-                path: "",
-                name: "HPContent",
+                path: "/home",
+                name: "HomeContent",
                 component: () =>
                     import(
                         /* webpackChunkName: "Backend" */ "../views/homeContent.vue"
+
                     ),
+                    // redirect: "/home",
             },
+
+            {
+                path: "/register",
+                name: "RegContent",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "Backend" */ "../views/registerContent.vue"
+
+                    ),
+                    // redirect: "/register"
+            },
+            
         ],
     },
     /**
      *  Profile layout used for both organization and usuario
      */
-    {
-        path: "/profile",
-        name: "profile",
-        component: () =>
-            import(/* webpackChunkName: "profile" */ "../layouts/Profile.vue"),
-        redirect: "/profile",
-        children: [
-            {
-                path: "",
-                name: "contentTest",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "content" */ "../views/profileContent.vue"
-                    ),
-            },
-        ],
-    },
+    // {
+    //     path: "/profile",
+    //     name: "profile",
+    //     component: () =>
+            // import(/* webpackChunkName: "profile" */ "../layouts/Profile.vue"),
+        // redirect: "/profile",
+        // children: [
+        //     {
+        //         path: "",
+        //         name: "contentTest",
+        //         component: () =>
+        //             import(
+            //             /* webpackChunkName: "content" */ "../views/profileContent.vue"
+            //         ),
+            // },
+        // ],
+    // },
 ];
 
 const router = createRouter({

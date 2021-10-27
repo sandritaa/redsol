@@ -1,7 +1,7 @@
 <template>
     <!-- <el-container id="page"> -->
     <el-carousel :interval="3000" type="card" height="500px">
-        <el-carousel-item v-for="i in [0, 1, 2, 3]" :key="i">
+        <el-carousel-item v-for="i in [0, 1, 2]" :key="i">
             <!-- <img :src="item" alt="Not retrived img" /> -->
             <img :src="items[i]" />
         </el-carousel-item>
@@ -13,14 +13,14 @@
             liderazgo que busca impactar vidas transmitiendo y promoviendo los
             valores a través de diferentes programas continuos y eventos
             masivos.
-            <br />
+            <br /> <br />
             <span style="color: rgb(134, 151, 247)"> Visión: </span> RedSol
             busca ser el referente internacional de voluntariado para jóvenes;
             ser un eje de apoyo integral para instituciones que educan y cuidan
-            a la niñez. <br />
+            a la niñez. <br /> <br />
             <span style="color: rgb(134, 151, 247)"> Misión: </span>Impactar la
             vida de niños y jóvenes para contribuir a formar un mundo más
-            esperanzador, alegre y solidario. <br />
+            esperanzador, alegre y solidario. <br /> <br />
             <span style="color: rgb(134, 151, 247)"> Valores: </span>Alegría,
             Solidaridad, Esperanza, Liderazgo, Gratitud
         </p>
@@ -79,7 +79,7 @@ export default {
     width: 200px;
     height: 187px;
     background-color: rgb(255, 255, 255);
-    background-image: url("sc1.jpg");
+    /* background-image: url("sc1.jpg"); */
     background-repeat: no-repeat;
     background-position: center top;
     border: 5px solid rgb(238, 198, 113);
@@ -94,7 +94,7 @@ export default {
     height: 187px;
     border: 5px solid rgb(238, 198, 113);
     background-color: rgb(255, 255, 255);
-    background-image: url("sc2.jpg");
+    /* background-image: url("sc2.jpg"); */
     background-repeat: no-repeat;
     background-position: center top;
     padding: 50px;
@@ -107,7 +107,7 @@ export default {
     width: 200px;
     height: 187px;
     background-color: rgb(255, 255, 255);
-    background-image: url("sc3.jpg");
+    /* background-image: url("sc3.jpg"); */
     background-repeat: no-repeat;
     background-position: center top;
     border: 5px solid rgb(238, 198, 113);
@@ -121,7 +121,7 @@ export default {
     width: 200px;
     height: 187px;
     background-color: rgb(255, 255, 255);
-    background-image: url("sc4.jpg");
+    /* background-image: url("sc4.jpg"); */
     background-repeat: no-repeat;
     background-position: center top;
     border: 5px solid rgb(238, 198, 113);
@@ -130,4 +130,9 @@ export default {
     margin-top: -212px;
     margin-bottom: 30px;
 }
+
+/* .el-carousel-img{
+    background-image: bg-gradient-to-b from-blue-300 w-full h-full
+} */
+
 </style>

@@ -14,8 +14,8 @@
                 ></el-image>
 
                 <router-view>
-                    <router-link to=".../views/homeContent.vue">
-                    <el-button class="h-5" type="text">Inicio</el-button>
+                    <router-link :to="{ name: 'HomeContent' }">
+                        <el-button class="h-5" type="text">Inicio</el-button>
                     </router-link>
                 </router-view>
 
@@ -24,10 +24,8 @@
                 </router-view> -->
 
                 <router-view>
-                    <router-link to="../views/RegisterContent">
-                    <el-button class="h-5" type="text">Registrate</el-button>
-                    </router-link>
-
+                        <router-link :to="{ name: 'RegContent' }">
+                        <el-button class="h-5" type="text">Registrate</el-button>
                 </router-view>
 
                 <router-view>

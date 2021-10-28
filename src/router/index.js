@@ -38,7 +38,7 @@ const routes = [
              *  Atomatically inject the childcomponent if does not have a path
              */
             {
-                path: "/home",
+                path: "",
                 name: "HomeContent",
                 component: () =>
                     import(
@@ -49,7 +49,7 @@ const routes = [
             },
 
             {
-                path: "/register",
+                path: "",
                 name: "RegContent",
                 component: () =>
                     import(

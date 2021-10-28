@@ -13,22 +13,34 @@
                     fit="scale-down"
                 ></el-image>
 
-                <router-view>
+                 <router-view>
+                    <router-link :to="{ name: 'HomeContent' }">
+                        <el-button class="h-5" type="text">Inicio</el-button>
+                    </router-link>
+                </router-view>
+
+                 <router-view>
+                        <router-link :to="{ name: 'RegContent' }">
+                        <el-button class="h-5" type="text">Registrate</el-button>
+                        </router-link>
+                </router-view>
+
+                <!-- <router-view>
                     <router-link to=".../views/homeContent.vue">
                     <el-button class="h-5" type="text">Inicio</el-button>
                     </router-link>
-                </router-view>
+                </router-view> -->
 
                 <!-- <router-view>
                     <el-button class="h-5" type="text">Contribuye</el-button>
                 </router-view> -->
 
-                <router-view>
+                <!-- <router-view>
                     <router-link to="../views/RegisterContent">
                     <el-button class="h-5" type="text">Registrate</el-button>
                     </router-link>
 
-                </router-view>
+                </router-view> -->
 
                 <router-view>
                     <el-button class="h-5" type="text">Login</el-button>

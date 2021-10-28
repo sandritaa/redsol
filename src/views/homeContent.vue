@@ -15,13 +15,17 @@
             masivos.
             <br /> <br />
             <span style="color: rgb(134, 151, 247)"> Visión: </span> RedSol
-            busca ser el referente internacional de voluntariado para jóvenes;
-            ser un eje de apoyo integral para instituciones que educan y cuidan
-            a la niñez. <br /> <br />
-            <span style="color: rgb(134, 151, 247)"> Misión: </span>Impactar la
-            vida de niños y jóvenes para contribuir a formar un mundo más
-            esperanzador, alegre y solidario. <br /> <br />
-            <span style="color: rgb(134, 151, 247)"> Valores: </span>Alegría,
+             Es la ética de la organizacion para que todos los usuarios tengan conocimiento de ello y puedan vivir con dignidad. <br /> <br />
+
+            
+            <span style="color: rgb(134, 151, 247)"> Misión: </span>
+            Contribuyendo a la nutrición, salud y bienestar de todas las personas orientadolos a donde acudir ante alguna necesidad con productos de máxima calidad.
+            Dándoles a todos los necesitados la formacion integral para que tengan información adecuada de los distintos servicios, como son la responsabilidad, salud, desarrollo de las personas sin ningún tipo de discriminación y el derecho a la igualdad afectiva entre todos para una mejor calidad de vida.
+         
+
+
+             <br /> <br />
+            <span style="color: rgb(134, 151, 247)"> Valores: </span>Honradez,
             Solidaridad, Esperanza, Liderazgo, Gratitud
         </p>
         <el-image style="max-width: 400px" :src="items[4]" fit="scale-down">

@@ -17,7 +17,7 @@
                     <router-link :to="{ name: 'HomeContent' }">
                         <el-button class="h-5" type="text">Inicio</el-button>
                     </router-link>
-                </router-view>
+                </router-view> 
 
                  <router-view>
                         <router-link :to="{ name: 'RegContent' }">

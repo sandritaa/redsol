@@ -8,7 +8,7 @@
   <el-step title="Step 3"></el-step>
 </el-steps>
 
-<br><br>
+<br><br><br>
 
 <el-form ref="form" :model="form"  label-width="120px">
         <el-form-item label="Nombre">
@@ -27,13 +27,13 @@
         <el-input v-model="form.name" placeholder="Confirmar Contraseña"></el-input>
     </el-form-item>
     <el-form-item label="Quienes Somos">
-    <el-input type="textarea" v-model="form.desc"></el-input>
+    <el-input type="textarea" v-model="form.desc" placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."></el-input>
   </el-form-item>
    <el-form-item label="Descripcion General">
-    <el-input type="textarea" v-model="form.desc"></el-input>
+    <el-input type="textarea" v-model="form.desc" placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."></el-input>
   </el-form-item>
    <el-form-item label="Que necesitamos">
-    <el-input type="textarea" v-model="form.desc"></el-input>
+    <el-input type="textarea" v-model="form.desc" placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."></el-input>
   </el-form-item>
    <!-- <el-form-item>
   <el-form-item label="Descripcion General">
@@ -86,8 +86,10 @@
   </el-form-item> -->
   <el-form-item>
 
-    <el-button style="margin-top: 12px;" type="primary"  @click="next">Next step</el-button>
-    <el-button>Cancel</el-button>
+    <el-button style="margin-top: 12px; margin-left:70px;" type="primary"  @click="previous">Previous step</el-button>
+    <el-button style="margin-top: 12px; margin-left:70px;" type="primary"  @click="next">Next step</el-button>
+    
+    <!-- <el-button>Cancel</el-button> -->
     
   </el-form-item>
 
@@ -121,6 +123,9 @@
       },
       next() {
         if (this.active++ > 2) this.active = 0;
+      },
+      previous() {
+        if(this.active-- < 2) this.active=0
       }
     }
   }
@@ -133,13 +138,20 @@ text-align: center;
 display: inline-block;
 } */
 .el-form{
-    width: 580px;
+    width: 680px;
     margin:auto;
     /* position: center; */
     /* position: center; */
     /* display: inline-block;
     text-align: center; */
   }
+  .el-steps{
+    width: 780px;
+    margin:auto;
+    margin-left: 350px;
+  }
+
+  
 
  
 </style>

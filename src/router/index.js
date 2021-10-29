@@ -69,6 +69,28 @@ const routes = [
                     ),
                     // redirect: "/register"
             },
+
+            {
+                path: "",
+                name: "RegOrgContent3",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent3.vue"
+
+                    ),
+                    // redirect: "/register"
+            },
+
+            {
+                path: "",
+                name: "RegOrgContent4",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent4.vue"
+
+                    ),
+                    // redirect: "/register"
+            },
             
         ],
     },

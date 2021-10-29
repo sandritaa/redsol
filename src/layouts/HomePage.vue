@@ -20,10 +20,16 @@
                 </router-view> 
 
                  <router-view>
-                        <router-link :to="{ name: 'RegContent' }">
+                        <router-link :to="{ name: 'RegOrgContent1' }">
                         <el-button class="h-5" type="text">Registrate</el-button>
                         </router-link>
                 </router-view>
+
+                 <!-- <router-view>
+                        <router-link :to="{ name: 'RegOrgContent2' }">
+                        <el-button class="h-5" type="text"></el-button>
+                        </router-link>
+                </router-view> -->
 
                 <!-- <router-view>
                     <router-link to=".../views/homeContent.vue">

@@ -50,10 +50,21 @@ const routes = [
 
             {
                 path: "",
-                name: "RegContent",
+                name: "RegOrgContent1",
                 component: () =>
                     import(
-                        /* webpackChunkName: "Backend" */ "../views/registerContent.vue"
+                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent1.vue"
+
+                    ),
+                    // redirect: "/register"
+            },
+
+            {
+                path: "",
+                name: "RegOrgContent2",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent2.vue"
 
                     ),
                     // redirect: "/register"

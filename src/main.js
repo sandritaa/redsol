@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import installElementPlus from "./plugins/element";
 import "./plugins/index.css";
+
 /**
  *  ADDING VUE APOLLO CLIENT
  */

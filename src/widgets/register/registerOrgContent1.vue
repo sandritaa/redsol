@@ -1,14 +1,6 @@
 <template>
-  <br /><br />
-
-  <el-steps :active="active" finish-status="success">
-    <el-step title="Informacion"></el-step>
-    <el-step title="Datos"></el-step>
-    <el-step title="Servicios"></el-step>
-  </el-steps>
-
   <br /><br /><br />
-
+  This is 1
   <el-form ref="form" :model="form" label-width="120px">
     <el-form-item
       label="Nombre"
@@ -92,21 +84,6 @@
             placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
           ></el-input>
         </el-form-item>
-
-        <el-form-item>
-          <el-button
-            style="margin-top: 12px; margin-left:70px;"
-            type="primary"
-            @click="previous"
-            >Previous</el-button>
-
-          <el-button
-            style="margin-top: 12px; margin-left:70px;"
-            type="primary"
-            @click="submit"
-            >Next</el-button>
-
-        </el-form-item>
       </el-form>
     </el-form>
   </el-form>
@@ -116,9 +93,6 @@
 export default {
   data() {
     return {
-      active: 0,
-      //  prev: "RegOrgContent2",
-      //  next: "RegOrgContent4",
       ruleForm: {
         date1: "",
         date2: "",
@@ -153,17 +127,6 @@ export default {
         desc: "",
       },
     };
-  },
-  methods: {
-    onSubmit() {
-      console.log("submit!");
-    },
-    next() {
-      if (this.active++ > 3) this.active = 0;
-    },
-    previous() {
-      if (this.active-- < 0) this.active = 0;
-    },
   },
 };
 </script>

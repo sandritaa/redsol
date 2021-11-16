@@ -84,7 +84,7 @@ I am 3
 </el-form>
 </template>
 <script>
-import registerOrgContent1Vue from './registerOrgContent1.vue';
+import registerOrgContent1Vue from './registerOrgContent3.vue';
   export default {
     data() {
       return {

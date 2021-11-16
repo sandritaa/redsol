@@ -47,53 +47,32 @@ const routes = [
                     ),
                     // redirect: "/home",
             },
-
-            {
-                path: "",
-                name: "RegOrgContent1",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent1.vue"
-
-                    ),
-                    // redirect: "/register"
-            },
-
-            {
-                path: "",
-                name: "RegOrgContent2",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent2.vue"
-
-                    ),
-                    // redirect: "/register"
-            },
-
-            {
-                path: "",
-                name: "RegOrgContent3",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent3.vue"
-
-                    ),
-                    // redirect: "/register"
-            },
-
-            {
-                path: "",
-                name: "RegOrgContent4",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "Backend" */ "../views/registerOrgContent4.vue"
-
-                    ),
-                    // redirect: "/register"
-            },
-            
         ],
     },
+
+    {
+        path: "/",
+        name: "Register",
+        components: {
+            default: () =>
+                import(
+                     "../layouts/Register.vue"
+
+                ),
+        },
+        children: [
+            {
+                path: "",
+                name: "RegisterContent",
+                component: () =>
+                    import(
+                        "../views/registerContent.vue"
+
+                    ),
+            },
+        ],
+    },
+
     /**
      *  Profile layout used for both organization and usuario
      */

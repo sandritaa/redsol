@@ -1,4 +1,5 @@
 <template>
+I am 1
 <br><br>
 
 
@@ -12,41 +13,49 @@
 <br><br><br>
 
 <el-form ref="form" :model="form"  label-width="120px">
-        <el-form-item label="Nombre"
-        :rules="[
+        <el-form-item label="Nombre" :rules="[
         { required: true, message: 'name is required'},
         ]">
         <el-input v-model="form.name" placeholder="ej: Justice International"></el-input>
     </el-form-item>
      <el-form ref="form" :model="form" label-width="120px">
-        <el-form-item label="Correo Electronico"
-         :rules="[
+        <el-form-item label="Correo Electronico"  
+        :rules="[
         { required: true, message: 'name is required'},
         ]">
         <el-input v-model="form.name" placeholder="ej: ejemplo@correo.com"></el-input>
     </el-form-item>
-     <el-form ref="form" :model="form" label-width="120px">
-        <el-form-item label="Contraseña"
-         :rules="[
-        { required: true, message: 'name is required'},
-        ]">
-        <el-input v-model="form.name" placeholder="Contraseña"></el-input>
+
+     <el-form-item label="Activity time" required>
+    <el-col :span="11">
+      <el-form-item prop="date1">
+        <el-date-picker type="date" placeholder="Pick a date" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
+      </el-form-item>
+    </el-col>
+    <el-col class="line" :span="2">-</el-col>
+    <el-col :span="11">
+      <el-form-item prop="date2">
+        <el-time-picker placeholder="Pick a time" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
+      </el-form-item>
+       </el-col>
+
+
     </el-form-item>
      <el-form ref="form" :model="form" label-width="120px">
-        <el-form-item label="Confirmar Contraseña"
+        <el-form-item label="Confirmar Contraseña" 
          :rules="[
         { required: true, message: 'name is required'},
         ]">
         <el-input v-model="form.name" placeholder="Confirmar Contraseña"></el-input>
     </el-form-item>
-    <el-form-item label="Quienes Somos"
+    <el-form-item label="Quienes Somos" 
      :rules="[
         { required: true, message: 'name is required'},
         ]">
     <el-input type="textarea" v-model="form.desc" placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."></el-input>
   </el-form-item>
    <el-form-item label="Descripcion General"
-        :rules="[
+    :rules="[
         { required: true, message: 'name is required'},
         ]">
     <el-input type="textarea" v-model="form.desc" placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."></el-input>
@@ -59,27 +68,42 @@
   </el-form-item>
   
   <el-form-item>
+
     <router-link :to="{ name: prev }">
-      <el-button style="margin-top: 12px; margin-left:70px;" type="primary" @click="previous">Previous step </el-button>
+    <el-button style="margin-top: 12px; margin-left:70px;" type="primary" @click="previous" >Previous step</el-button>
     </router-link>
+
     <router-link :to="{ name: next }">
-      <el-button style="margin-top: 12px; margin-left:70px;" type="primary" @click="next" >Next step </el-button>
+    <el-button style="margin-top: 12px; margin-left:70px;" type="primary" @click="submit" >Submit</el-button>
     </router-link>
+   
 
   </el-form-item>
-
-</el-form>
 </el-form>
 </el-form>
 </el-form>
 </template>
 <script>
+import registerOrgContent1Vue from './registerOrgContent1.vue';
   export default {
     data() {
       return {
          active: 0,
-         prev: "HomeContent",
-         next: "RegOrgContent2",
+        //  prev: "RegOrgContent2",
+        //  next: "RegOrgContent4",
+         ruleForm:{
+          date1: '',
+          date2: '', 
+         },
+
+         rules:{
+              date1: [
+            { type: 'date', required: true, message: 'Please pick a date', trigger: 'change' }
+          ],
+          date2: [
+            { type: 'date', required: true, message: 'Please pick a time', trigger: 'change' }
+          ],
+         },
          form: {
           name: '',
           region: '',

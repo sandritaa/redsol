@@ -21,8 +21,6 @@
             <span style="color: rgb(134, 151, 247)"> Misión: </span>
             Contribuyendo a la nutrición, salud y bienestar de todas las personas orientadolos a donde acudir ante alguna necesidad con productos de máxima calidad.
             Dándoles a todos los necesitados la formacion integral para que tengan información adecuada de los distintos servicios, como son la responsabilidad, salud, desarrollo de las personas sin ningún tipo de discriminación y el derecho a la igualdad afectiva entre todos para una mejor calidad de vida.
-         
-
 
              <br /> <br />
             <span style="color: rgb(134, 151, 247)"> Valores: </span>Honradez,

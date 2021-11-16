@@ -1,4 +1,5 @@
 <template>
+I am 2
 <br><br>
 
 
@@ -88,8 +89,8 @@ import registerOrgContent1Vue from './registerOrgContent1.vue';
     data() {
       return {
          active: 0,
-         prev: "RegOrgContent2",
-         next: "RegOrgContent4",
+        //  prev: "RegOrgContent2",
+        //  next: "RegOrgContent4",
          ruleForm:{
           date1: '',
           date2: '', 

@@ -25,7 +25,6 @@
                         </router-link>
                 </router-view>
 
-
                 <router-view>
                     <el-button class="h-5" type="text">Login</el-button>
                 </router-view>
@@ -33,9 +32,7 @@
         </el-header>
 
         <el-main>
-            <!-- <el-card> -->
-                <router-view></router-view>
-            <!-- </el-card> -->
+            <router-view></router-view>
         </el-main>
 
         <el-footer id="footer">
@@ -76,11 +73,6 @@
                 <h6>  
                     RedSol Ⓒ
                 </h6>
-            <!-- <el-row align="middle" justify="space-around">
-                <p>
-                    copyright
-                </p>
-            </el-row> -->
         </el-footer>
     </el-container>
 </template>

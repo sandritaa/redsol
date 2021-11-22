@@ -12,7 +12,6 @@
     <div v-if="selected == 1"><reg1 /></div>
     <div v-if="selected == 2"><reg2 /></div>
     <div v-if="selected == 3"><reg3 /></div>
-    <div v-if="selected == 4"><reg4 /></div>
   </el-form>
 
   <el-form-item>
@@ -37,10 +36,9 @@
 import reg1 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent1.vue";
 import reg2 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent2.vue";
 import reg3 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent3.vue";
-import reg4 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent4.vue";
 
 export default {
-  components: { reg1, reg2, reg3, reg4}, 
+  components: { reg1, reg2, reg3}, 
   data() {
     return {
       selected: 1,
@@ -51,8 +49,8 @@ export default {
     next() {
       if (this.selected < 3) {
         this.selected = this.selected + 1;
-      } else if (this.selected < 4) {
-        this.selected = this.selected + 1;
+      // } else if (this.selected < 4) {
+      //   this.selected = this.selected + 1;
         this.$confirm('Ready to submit. Continue?', {
            confirmButtonText: 'Yes',
            cancelButtonText: 'No',

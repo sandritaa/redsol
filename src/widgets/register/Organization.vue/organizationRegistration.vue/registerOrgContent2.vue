@@ -79,7 +79,6 @@
     </el-form>
 </template>
 <script>
-// import registerOrgContent1Vue from './registerOrgContent1.vue';
 export default {
     data() {
         return {

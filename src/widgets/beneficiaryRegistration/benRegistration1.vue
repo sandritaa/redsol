@@ -1,6 +1,5 @@
 <template>
   <br /><br /><br />
-    This is 3
 
   <el-form ref="form" :model="form" label-width="120px">
     <el-form-item
@@ -12,7 +11,7 @@
         placeholder="ej: Justice International"
       ></el-input>
     </el-form-item>
-    <el-form ref="form" :model="form" label-width="120px">
+    <!-- <el-form ref="form" :model="form" label-width="120px"> -->
       <el-form-item
         label="Correo Electronico"
         :rules="[{ required: true, message: 'name is required' }]"
@@ -23,7 +22,7 @@
         ></el-input>
       </el-form-item>
 
-      <el-form-item label="Activity time" required>
+      <el-form-item label="Horario" required>
         <el-col :span="11">
           <el-form-item prop="date1">
             <el-date-picker
@@ -45,7 +44,7 @@
           </el-form-item>
         </el-col>
       </el-form-item>
-      <el-form ref="form" :model="form" label-width="120px">
+      <!-- <el-form ref="form" :model="form" label-width="120px"> -->
         <el-form-item
           label="Confirmar Contraseña"
           :rules="[{ required: true, message: 'name is required' }]"
@@ -85,8 +84,8 @@
             placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
           ></el-input>
         </el-form-item>
-      </el-form>
-    </el-form>
+      <!-- </el-form>
+    </el-form> -->
   </el-form>
 </template>
 <script>

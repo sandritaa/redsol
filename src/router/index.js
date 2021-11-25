@@ -60,7 +60,7 @@ const routes = [
 
                 ),
         },
-        children: [
+             children: [
             {
                 path: "",
                 name: "RegisterContent",
@@ -71,7 +71,30 @@ const routes = [
                     ),
             },
         ],
+        // children: [
+        //     {
+        //         path: "",
+        //         name: "BeneficiaryContent",
+        //         component: () =>
+        //             import(
+        //                 "../views/beneficiaryContent.vue"
+
+        //             ),
+        //     },
+        
+            // {
+            //     path: "",
+            //     name: "OrganizationContent",
+            //     component: () =>
+            //         import(
+            //             "../views/organizationContent.vue"
+
+            //         ),
+            // },
+        
+   
     },
+    
 
     /**
      *  Profile layout used for both organization and usuario

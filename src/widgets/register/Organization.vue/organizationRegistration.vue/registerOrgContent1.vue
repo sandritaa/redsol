@@ -45,6 +45,16 @@
         </el-col>
       </el-form-item>
       <!-- <el-form ref="form" :model="form" label-width="120px"> -->
+         <el-form-item
+          label="Contraseña"
+          :rules="[{ required: true, message: 'name is required' }]"
+        >
+          <el-input
+            v-model="form.name"
+            placeholder="Confirmar Contraseña"
+          ></el-input>
+        </el-form-item>
+        
         <el-form-item
           label="Confirmar Contraseña"
           :rules="[{ required: true, message: 'name is required' }]"

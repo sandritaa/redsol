@@ -4,7 +4,7 @@
 
     <br /><br /><br />
 
-    <el-form ref="form" :model="form" label-width="120px">
+    <el-form ref="form" :model="form" label-width="220px">
         <el-form-item
             label="Correo de Contacto"
             :rules="[
@@ -79,7 +79,6 @@
     </el-form>
 </template>
 <script>
-// import registerOrgContent1Vue from './registerOrgContent1.vue';
 export default {
     data() {
         return {

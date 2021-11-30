@@ -1,5 +1,5 @@
 <template>
-  <!-- <h1>Sandra is really stubborn</h1> -->
+
   <br /><br />
 
   <!-- organization form layout -->
@@ -11,9 +11,9 @@
         <el-step title="Datos"></el-step>
         <el-step title="Servicios"></el-step>
       </el-steps>
-      <div v-if="selectedWidget == 1"><reg1 /></div>
-      <div v-if="selectedWidget == 2"><reg2 /></div>
-      <div v-if="selectedWidget >= 3"><reg3 /></div>
+      <div v-if="selectedWidget == 1"><regOrg1 /></div>
+      <div v-if="selectedWidget == 2"><regOrg2 /></div>
+      <div v-if="selectedWidget >= 3"><regOrg3 /></div>
     </el-form>
   </div>
 
@@ -23,12 +23,10 @@
     <el-form ref="form" :model="form" label-width="-80px">
       <el-steps :active="selectedBar - 1" finish-status="success">
         <el-step title="Informacion"></el-step>
-        <el-step title="Datos"></el-step>
-        <el-step title="Servicios"></el-step>
+        <el-step title="Confirmacion"></el-step>
       </el-steps>
-      <div v-if="selectedWidget == 1"><reg1 /></div>
-      <div v-if="selectedWidget == 2"><reg2 /></div>
-      <div v-if="selectedWidget >= 3"><reg3 /></div>
+      <div v-if="selectedWidget == 1"><regBen1 /></div>
+      <div v-if="selectedWidget == 2"><regBen2 /></div>
     </el-form>
   </div>
 
@@ -41,7 +39,7 @@
           <el-card :body-style="{ padding: '0px' }">
             <img src="../assets/Registration/green.png" class="image" />
             <div style="padding: 14px;">
-              <span>Organization Registration</span>
+              <span>Registrate como organization</span>
               <div class="bottom clearfix">
                 <time class="time">{{ currentDate }}</time>
                 <!-- <button @click="toggleShowOrgForm"></button> -->
@@ -63,7 +61,7 @@
           <el-card :body-style="{ padding: '0px' }">
             <img src="../assets/Registration/blue.png" class="image" />
             <div style="padding: 14px;">
-              <span>Organization Registration</span>
+              <span>Registrate como usuario </span>
               <div class="bottom clearfix">
                 <time class="time">{{ currentDate }}</time>
                 <!-- <button @click="toggleShowOrgForm"></button> -->
@@ -95,12 +93,14 @@
 </template>
 
 <script>
-import reg1 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent1.vue";
-import reg2 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent2.vue";
-import reg3 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent3.vue";
+import regOrg1 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent1.vue";
+import regOrg2 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent2.vue";
+import regOrg3 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent3.vue";
+import regBen1 from "../widgets/beneficiaryRegistration/registerBenContent1.vue";
+import regBen2 from "../widgets/beneficiaryRegistration/registerBenContent2.vue";
 
 export default {
-  components: { reg1, reg2, reg3 },
+  components: { regOrg1, regOrg2, regOrg3, regBen1, regBen2},
   data() {
     return {
       selectedBar: 1,
@@ -115,14 +115,14 @@ export default {
 
   methods: {
     next() {
-      if (this.selectedBar < 3 && this.selectedWidget < 3) {
+      if (this.selectedBar < 2 && this.selectedWidget < 2) {
         this.selectedBar = this.selectedBar + 1;
         this.selectedWidget = this.selectedWidget + 1;
-      } else if (this.selectedBar < 4) {
+      } else if (this.selectedBar < 3) {
         this.$confirm("Ready to submit. Continue?", {
           confirmButtonText: "Yes",
           cancelButtonText: "No",
-        })
+        }) 
           .then(() => {
             this.$message({
               type: "success",
@@ -132,7 +132,7 @@ export default {
           .catch(() => {
             this.$message({
               type: "cancel",
-              message: "Canceled",
+              message: "Registration Canceled",
             });
           });
       }

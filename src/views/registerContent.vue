@@ -13,7 +13,8 @@
       </el-steps>
       <div v-if="selectedWidget == 1"><regOrg1 /></div>
       <div v-if="selectedWidget == 2"><regOrg2 /></div>
-      <div v-if="selectedWidget >= 3"><regOrg3 /></div>
+      <div v-if="selectedWidget == 3"><regOrg3 /></div>
+      <div v-if="selectedWidget == 4"><regOrg4 /></div>
     </el-form>
   </div>
 
@@ -96,11 +97,12 @@
 import regOrg1 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent1.vue";
 import regOrg2 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent2.vue";
 import regOrg3 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent3.vue";
+import regOrg4 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent4.vue";
 import regBen1 from "../widgets/beneficiaryRegistration/registerBenContent1.vue";
 import regBen2 from "../widgets/beneficiaryRegistration/registerBenContent2.vue";
 
 export default {
-  components: { regOrg1, regOrg2, regOrg3, regBen1, regBen2},
+  components: { regOrg1, regOrg2, regOrg3,regOrg4, regBen1, regBen2 },
   data() {
     return {
       selectedBar: 1,
@@ -115,10 +117,19 @@ export default {
 
   methods: {
     next() {
-      if (this.selectedBar < 2 && this.selectedWidget < 2) {
+
+      let num;
+      if(this.isOrg == true){
+        num = 3;
+      } else if(this.isBen == true){
+        num = 2;
+      }
+
+      if (this.selectedBar < num && this.selectedWidget < num) {
         this.selectedBar = this.selectedBar + 1;
         this.selectedWidget = this.selectedWidget + 1;
-      } else if (this.selectedBar < 3) {
+      } else if (this.selectedBar < num+1) {
+        this.selectedBar = this.selectedBar + 1;
         this.$confirm("Ready to submit. Continue?", {
           confirmButtonText: "Yes",
           cancelButtonText: "No",

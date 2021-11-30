@@ -108,6 +108,9 @@ export default {
       isOrg: false,
       isBen: false,
     };
+    // ruleForm:{
+      
+    // }
   },
 
   methods: {
@@ -135,9 +138,10 @@ export default {
       }
     },
     previous() {
-      if (this.selectedWidget > 1) {
+      if (this.selectedWidget > 1 && this.selectedBar >1) {
         this.selectedWidget = this.selectedWidget - 1;
-      }
+        this.selectedBar = this.selectedBar - 1;
+      } 
     },
     toggleShowOrgForm() {
       this.isOrg = !this.isOrg;

@@ -1,7 +1,7 @@
 <template>
   <br /><br /><br />
 
-  <el-form ref="form" :model="form" label-width="120px">
+  <el-form ref="form" :model="form" label-width="220px">
     <el-form-item
       label="Nombre"
       :rules="[{ required: true, message: 'name is required' }]"

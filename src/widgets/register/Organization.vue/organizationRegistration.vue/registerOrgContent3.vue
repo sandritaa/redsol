@@ -10,7 +10,7 @@
   </el-checkbox-group> -->
 
   <!-- <br /><br /><br /><br /><br /> -->
-  <el-form ref="form" :model="form" label-width="120px">
+  <el-form ref="form" :model="form" label-width="220px">
   <h3> Seleccione una Categoria para su organizacion y registre sus servicios:</h3>
   <br>
   <div class="block">

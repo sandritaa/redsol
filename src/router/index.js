@@ -59,10 +59,12 @@ const routes = [
                      "../layouts/Register.vue"
 
                 ),
+    
         },
+        props: true,
              children: [
             {
-                path: "",
+                path: "/",
                 name: "RegisterContent",
                 component: () =>
                     import(

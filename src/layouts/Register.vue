@@ -20,9 +20,9 @@
                 </router-view> 
 
                  <router-view>
-                        <router-link :to="{ name: 'RegisterContent' }">
+                    <router-link :to="{ name: 'RegisterContent'}" replace>
                         <el-button class="h-5" type="text">Registrate</el-button>
-                        </router-link>
+                    </router-link>
                 </router-view>
 
                 <router-view>

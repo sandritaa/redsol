@@ -14,7 +14,7 @@
       <div v-if="selectedWidget == 1"><regOrg1 /></div>
       <div v-if="selectedWidget == 2"><regOrg2 /></div>
       <div v-if="selectedWidget == 3"><regOrg3 /></div>
-      <div v-if="selectedWidget == 4"><regOrg4 /></div>
+      <div v-if="selectedWidget == 4">Hello</div>
     </el-form>
   </div>
 
@@ -119,26 +119,31 @@ export default {
     next() {
 
       let num;
+      let barNum;
       if(this.isOrg == true){
         num = 3;
+        barNum = 3;
       } else if(this.isBen == true){
-        num = 2;
+        num = 1;
+        barNum= 1; 
       }
 
       if (this.selectedBar < num && this.selectedWidget < num) {
         this.selectedBar = this.selectedBar + 1;
         this.selectedWidget = this.selectedWidget + 1;
-      } else if (this.selectedBar < num+1) {
+      } else if (this.selectedBar < barNum+1) {
         this.selectedBar = this.selectedBar + 1;
         this.$confirm("Ready to submit. Continue?", {
           confirmButtonText: "Yes",
           cancelButtonText: "No",
-        }) 
+        })
           .then(() => {
             this.$message({
               type: "success",
               message: "Registered",
             });
+            this.selectedWidget = this.selectedWidget + 1;
+            this.selectedBar = this.selectedBar + 1;
           })
           .catch(() => {
             this.$message({

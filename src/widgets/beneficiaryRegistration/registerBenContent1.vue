@@ -9,7 +9,6 @@
       <el-input v-model="form.name" placeholder="ej: Jose"></el-input>
     </el-form-item>
 
-    <!-- <el-form ref="form" :model="form" label-width="220px"> -->
     <el-form-item
       label="Apellido"
       :rules="[{ required: true, message: 'apellido es requerido' }]"
@@ -31,7 +30,7 @@
       <el-input v-model="form.password" placeholder="Contraseña"></el-input>
     </el-form-item>
 
-    <!-- <el-form ref="form" :model="form" label-width="120px"> -->
+
     <el-form-item
       label="Confirmar Contraseña"
       :rules="[{ required: true, message: 'confirmacion de contraseña es requerida' }]"
@@ -49,6 +48,7 @@
 
 
   </el-form>
+  
 </template>
 <script>
 export default {

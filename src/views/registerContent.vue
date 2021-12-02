@@ -10,18 +10,20 @@
         <el-step title="Informacion"></el-step>
         <el-step title="Datos"></el-step>
         <el-step title="Servicios"></el-step>
+      
       </el-steps>
+      <!-- <div v-if="selectedWidget == 1"><hey /></div> -->
       <div v-if="selectedWidget == 1"><regOrg1 /></div>
       <div v-if="selectedWidget == 2"><regOrg2 /></div>
       <div v-if="selectedWidget == 3"><regOrg3 /></div>
-      <div v-if="selectedWidget == 4">Hello</div>
+      <div v-if="selectedWidget == 4"><regOrg4 /></div>
     </el-form>
   </div>
 
   <!-- beneficiary form layout -->
   <div v-else-if="isBen == true">
     BEN FORM
-    <el-form ref="form" :model="form" label-width="-80px">
+    <el-form ref="form" :model="form" label-width="-80px">n
       <el-steps :active="selectedBar - 1" finish-status="success">
         <el-step title="Informacion"></el-step>
         <el-step title="Confirmacion"></el-step>
@@ -89,20 +91,26 @@
       type="primary"
       @click="next"
       >Next</el-button
-    >
+    > 
   </el-form-item>
+<!-- 
+  <el-form-item>
+    <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
+    <el-button @click="resetForm('ruleForm')">Reset</el-button>
+  </el-form-item> -->
 </template>
 
 <script>
-import regOrg1 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent1.vue";
-import regOrg2 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent2.vue";
-import regOrg3 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent3.vue";
-import regOrg4 from "../widgets/register/Organization.vue/organizationRegistration.vue/registerOrgContent4.vue";
+import regOrg1 from "../widgets/register/Organization/organizationRegistration/registerOrgContent1.vue";
+// import hey from "../widgets/register/Organization/organizationRegistration/TEST.vue";
+import regOrg2 from "../widgets/register/Organization/organizationRegistration/registerOrgContent2.vue";
+import regOrg3 from "../widgets/register/Organization/organizationRegistration/registerOrgContent3.vue";
+import regOrg4 from "../widgets/register/Organization/organizationRegistration/registerOrgContent4.vue";
 import regBen1 from "../widgets/beneficiaryRegistration/registerBenContent1.vue";
 import regBen2 from "../widgets/beneficiaryRegistration/registerBenContent2.vue";
 
 export default {
-  components: { regOrg1, regOrg2, regOrg3,regOrg4, regBen1, regBen2 },
+  components: {regOrg1, regOrg2, regOrg3, regOrg4, regBen1, regBen2 },
   data() {
     return {
       selectedBar: 1,
@@ -110,14 +118,11 @@ export default {
       isOrg: false,
       isBen: false,
     };
-    // ruleForm:{
-      
-    // }
   },
-
   methods: {
     next() {
-
+      // submitForm(formName) {
+   
       let num;
       let barNum;
       if(this.isOrg == true){
@@ -165,8 +170,10 @@ export default {
     toggleShowBenForm() {
       this.isBen = !this.isBen;
     },
-  },
-};
+  }
+  }
+// };
+
 </script>
 
 <style>

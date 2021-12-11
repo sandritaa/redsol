@@ -1,29 +1,38 @@
 <template>
-
   <br /><br />
 
+  <el-carousel :interval="3000" type="card" height="500px">
+    <el-carousel-item v-for="i in [0]" :key="i">
+      <!-- <img :src="item" alt="Not retrived img" /> -->
+      <img :src="items[i]" />
+    </el-carousel-item>
+  </el-carousel>
+  <br /><br />
+  <br /><br />
   <!-- organization form layout -->
   <div v-if="isOrg == true">
     ORG FORM
-    <el-form ref="form" :model="form" label-width="-80px">
+    {{ form }}
+    <el-form label-width="-80px">
       <el-steps :active="selectedBar - 1" finish-status="success">
         <el-step title="Informacion"></el-step>
         <el-step title="Datos"></el-step>
         <el-step title="Servicios"></el-step>
-      
       </el-steps>
       <!-- <div v-if="selectedWidget == 1"><hey /></div> -->
-      <div v-if="selectedWidget == 1"><regOrg1 /></div>
+      <div v-if="selectedWidget == 1"><regOrg1 @changeName="changeNameParent($event)"/></div>
       <div v-if="selectedWidget == 2"><regOrg2 /></div>
       <div v-if="selectedWidget == 3"><regOrg3 /></div>
       <div v-if="selectedWidget == 4"><regOrg4 /></div>
+ 
     </el-form>
   </div>
 
   <!-- beneficiary form layout -->
   <div v-else-if="isBen == true">
     BEN FORM
-    <el-form ref="form" :model="form" label-width="-80px">n
+
+    <el-form ref="form" :model="form" label-width="-80px">
       <el-steps :active="selectedBar - 1" finish-status="success">
         <el-step title="Informacion"></el-step>
         <el-step title="Confirmacion"></el-step>
@@ -91,9 +100,9 @@
       type="primary"
       @click="next"
       >Next</el-button
-    > 
+    >
   </el-form-item>
-<!-- 
+<!--   
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
     <el-button @click="resetForm('ruleForm')">Reset</el-button>
@@ -110,33 +119,39 @@ import regBen1 from "../widgets/beneficiaryRegistration/registerBenContent1.vue"
 import regBen2 from "../widgets/beneficiaryRegistration/registerBenContent2.vue";
 
 export default {
-  components: {regOrg1, regOrg2, regOrg3, regOrg4, regBen1, regBen2 },
+  components: { regOrg1, regOrg2, regOrg3, regOrg4, regBen1, regBen2 },
   data() {
     return {
       selectedBar: 1,
       selectedWidget: 1,
       isOrg: false,
       isBen: false,
+      items: [require("../assets/HomePage/1.jpg")],
+      form: {
+        name:"",
+        email:"",
+        desc:""
+      } 
     };
   },
   methods: {
     next() {
       // submitForm(formName) {
-   
+
       let num;
       let barNum;
-      if(this.isOrg == true){
+      if (this.isOrg == true) {
         num = 3;
         barNum = 3;
-      } else if(this.isBen == true){
+      } else if (this.isBen == true) {
         num = 1;
-        barNum= 1; 
+        barNum = 1;
       }
 
       if (this.selectedBar < num && this.selectedWidget < num) {
         this.selectedBar = this.selectedBar + 1;
         this.selectedWidget = this.selectedWidget + 1;
-      } else if (this.selectedBar < barNum+1) {
+      } else if (this.selectedBar < barNum + 1) {
         this.selectedBar = this.selectedBar + 1;
         this.$confirm("Ready to submit. Continue?", {
           confirmButtonText: "Yes",
@@ -159,10 +174,10 @@ export default {
       }
     },
     previous() {
-      if (this.selectedWidget > 1 && this.selectedBar >1) {
+      if (this.selectedWidget > 1 && this.selectedBar > 1) {
         this.selectedWidget = this.selectedWidget - 1;
         this.selectedBar = this.selectedBar - 1;
-      } 
+      }
     },
     toggleShowOrgForm() {
       this.isOrg = !this.isOrg;
@@ -170,10 +185,12 @@ export default {
     toggleShowBenForm() {
       this.isBen = !this.isBen;
     },
-  }
-  }
+    changeNameParent(regOrg1_p) {
+      this.form.name = regOrg1_p.name
+    }
+  },
+};
 // };
-
 </script>
 
 <style>

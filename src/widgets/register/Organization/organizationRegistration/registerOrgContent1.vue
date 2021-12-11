@@ -1,143 +1,108 @@
 <template>
   <br /><br /><br />
-
-  <el-form ref="form" :model="form" label-width="220px">
+<button type="button" @click='passEvent'> Update me</button>
+  <el-form label-width="220px">
     <el-form-item
       label="Nombre"
-      :rules="[{ required: true, message: 'name is required' }]"
+      :rules="[{ required: true, message: 'nombre es requerido' }]"
     >
       <el-input
-        v-model="form.name"
+        v-model="orgForm1.name"
         placeholder="ej: Justice International"
       ></el-input>
     </el-form-item>
-    <!-- <el-form ref="form" :model="form" label-width="120px"> -->
-      <el-form-item
-        label="Correo Electronico"
-        :rules="[{ required: true, message: 'name is required' }]"
-      >
-        <el-input
-          v-model="form.name"
-          placeholder="ej: ejemplo@correo.com"
-        ></el-input>
-      </el-form-item>
 
-      <el-form-item label="Horario" required>
-        <el-col :span="11">
-          <el-form-item prop="date1">
-            <el-date-picker
-              type="date"
-              placeholder="Pick a date"
-              v-model="ruleForm.date1"
-              style="width: 100%;"
-            ></el-date-picker>
-          </el-form-item>
-        </el-col>
-        <el-col class="line" :span="2">-</el-col>
-        <el-col :span="11">
-          <el-form-item prop="date2">
-            <el-time-picker
-              placeholder="Pick a time"
-              v-model="ruleForm.date2"
-              style="width: 100%;"
-            ></el-time-picker>
-          </el-form-item>
-        </el-col>
-      </el-form-item>
-      <!-- <el-form ref="form" :model="form" label-width="120px"> -->
-         <el-form-item
-          label="Contraseña"
-          :rules="[{ required: true, message: 'name is required' }]"
-        >
-          <el-input
-            v-model="form.name"
-            placeholder="Confirmar Contraseña"
-          ></el-input>
-        </el-form-item>
-        
-        <el-form-item
-          label="Confirmar Contraseña"
-          :rules="[{ required: true, message: 'name is required' }]"
-        >
-          <el-input
-            v-model="form.name"
-            placeholder="Confirmar Contraseña"
-          ></el-input>
-        </el-form-item>
-        <el-form-item
-          label="Quienes Somos"
-          :rules="[{ required: true, message: 'name is required' }]"
-        >
-          <el-input
-            type="textarea"
-            v-model="form.desc"
-            placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
-          ></el-input>
-        </el-form-item>
-        <el-form-item
-          label="Descripcion General"
-          :rules="[{ required: true, message: 'name is required' }]"
-        >
-          <el-input
-            type="textarea"
-            v-model="form.desc"
-            placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
-          ></el-input>
-        </el-form-item>
-        <el-form-item
-          label="Que necesitamos"
-          :rules="[{ required: true, message: 'name is required' }]"
-        >
-          <el-input
-            type="textarea"
-            v-model="form.desc"
-            placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
-          ></el-input>
-        </el-form-item>
-      <!-- </el-form>
-    </el-form> -->
+    <!-- <el-form-item
+      label="Correo Electronico"
+      :rules="[{ required: true, message: 'correo electronico es requerido' }]"
+    >
+      <el-input
+        v-model="form.email"
+        placeholder="ej: ejemplo@correo.com"
+      ></el-input>
+    </el-form-item>
+
+    <el-form-item
+      label="Contraseña"
+      :rules="[{ required: true, message: 'contraseña requerida' }]"
+    >
+      <el-input v-model="form.password" placeholder="Contraseña"></el-input>
+    </el-form-item>
+
+    <el-form-item
+      label="Confirmar Contraseña"
+      :rules="[
+        { required: true, message: 'confirmacion de contraseña requerida' },
+      ]"
+    >
+      <el-input
+        v-model="form.cpassword"
+        placeholder="Confirmar Contraseña"
+      ></el-input>
+    </el-form-item>
+
+    <el-form-item
+      label="Quienes Somos"
+      :rules="[{ required: true, message: 'descripcion requerida' }]"
+    >
+      <el-input
+        type="textarea"
+        v-model="form.desc1"
+        placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
+      ></el-input>
+    </el-form-item>
+
+    <el-form-item
+      label="Descripcion General"
+      :rules="[{ required: true, message: 'descripcion requerida' }]"
+    >
+      <el-input
+        type="textarea"
+        v-model="form.desc2"
+        placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
+      ></el-input>
+    </el-form-item>
+
+    <el-form-item
+      label="Que necesitamos"
+      :rules="[{ required: true, message: 'descripcion requerida' }]"
+    >
+      <el-input
+        type="textarea"
+        v-model="form.desc3"
+        placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
+      ></el-input>
+    </el-form-item> -->
+
   </el-form>
+
+{{ orgForm1.name }}
+
 </template>
 <script>
-
 export default {
   data() {
     return {
-      ruleForm: {
-        date1: "",
-        date2: "",
-      },
-
-      rules: {
-        date1: [
-          {
-            type: "date",
-            required: true,
-            message: "Please pick a date",
-            trigger: "change",
-          },
-        ],
-        date2: [
-          {
-            type: "date",
-            required: true,
-            message: "Please pick a time",
-            trigger: "change",
-          },
-        ],
-      },
-      form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
-      },
+      orgForm1: {
+        name:"",
+      }
+      // form: {
+      //   name: "",
+      //   email: "",
+      //   password: "",
+      //   cpassword: "",
+      //   desc1: "",
+      //   desc2: "",
+      //   desc3: "",
+      // },
     };
   },
+  methods:{
+    passEvent()
+    {
+      this.$emit('changeName',this.orgForm1)
+    }
+  }
 };
 </script>
 

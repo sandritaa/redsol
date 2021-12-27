@@ -1,32 +1,37 @@
 <template>
   <br /><br /><br />
-<button type="button" @click='passEvent'> Update me</button>
+<!-- <button type="button" @click='passEvent'> Update me</button> -->
   <el-form label-width="220px">
     <el-form-item
       label="Nombre"
       :rules="[{ required: true, message: 'nombre es requerido' }]"
     >
       <el-input
+        @input='passEvent'
         v-model="orgForm1.name"
         placeholder="ej: Justice International"
       ></el-input>
     </el-form-item>
 
-    <!-- <el-form-item
+     <el-form-item
       label="Correo Electronico"
       :rules="[{ required: true, message: 'correo electronico es requerido' }]"
     >
       <el-input
-        v-model="form.email"
+        @input='passEvent'
+        v-model="orgForm1.email"
         placeholder="ej: ejemplo@correo.com"
       ></el-input>
     </el-form-item>
 
-    <el-form-item
+      <el-form-item
       label="Contraseña"
       :rules="[{ required: true, message: 'contraseña requerida' }]"
     >
-      <el-input v-model="form.password" placeholder="Contraseña"></el-input>
+      <el-input 
+        @input='passEvent'
+        v-model="orgForm1.password" 
+      placeholder="Contraseña"></el-input>
     </el-form-item>
 
     <el-form-item
@@ -36,7 +41,8 @@
       ]"
     >
       <el-input
-        v-model="form.cpassword"
+          @input='passEvent'
+        v-model="orgForm1.cpassword"
         placeholder="Confirmar Contraseña"
       ></el-input>
     </el-form-item>
@@ -46,8 +52,9 @@
       :rules="[{ required: true, message: 'descripcion requerida' }]"
     >
       <el-input
+         @input='passEvent'
+        v-model="orgForm1.desc1"
         type="textarea"
-        v-model="form.desc1"
         placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
       ></el-input>
     </el-form-item>
@@ -57,8 +64,10 @@
       :rules="[{ required: true, message: 'descripcion requerida' }]"
     >
       <el-input
+        
+         @input='passEvent'
+        v-model="orgForm1.desc2"
         type="textarea"
-        v-model="form.desc2"
         placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
       ></el-input>
     </el-form-item>
@@ -68,15 +77,17 @@
       :rules="[{ required: true, message: 'descripcion requerida' }]"
     >
       <el-input
+        
+        @input='passEvent'
+        v-model="orgForm1.desc3"
         type="textarea"
-        v-model="form.desc3"
         placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
       ></el-input>
-    </el-form-item> -->
+    </el-form-item> 
 
   </el-form>
 
-{{ orgForm1.name }}
+{{ orgForm1 }}
 
 </template>
 <script>
@@ -85,6 +96,12 @@ export default {
     return {
       orgForm1: {
         name:"",
+        email: "",
+        password: "",
+        cpassword: "",
+        desc1: "",
+        desc2: "",
+        desc3: "",
       }
       // form: {
       //   name: "",
@@ -98,8 +115,7 @@ export default {
     };
   },
   methods:{
-    passEvent()
-    {
+    passEvent() {
       this.$emit('changeName',this.orgForm1)
     }
   }

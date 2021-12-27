@@ -10,11 +10,11 @@
 
   <!-- <br /><br /><br /><br /><br /> -->
   <el-form ref="form" :model="form" label-width="220px">
-    <!-- <h3>
+    <h3>
       Seleccione una Categoria para su organizacion y registre sus servicios:
     </h3>
     <br />
-    <div class="block">
+    <!-- <div class="block">
       <span class="demonstration">Categoria de la Organizacion</span>
       <hr />
       <br /><br />
@@ -24,8 +24,9 @@
         :props="{ multiple: true }"
         filterable
       ></el-cascader>
-    </div>
+    </div> -->
     <br /><br />
+  
     <h2>Servicios</h2>
 
     <hr />
@@ -39,12 +40,14 @@
     <h2>Servicio 1</h2>
     <br />
 
-    <el-cascader
+      <el-cascader
+       @input='passEvent'
+      v-model="orgForm3.options"
+       :options="options"
       placeholder="Categorias"
-      :options="options"
       :props="{ multiple: true }"
       filterable
-    ></el-cascader>
+     ></el-cascader>
     <br /><br />
     <h2>
       Seleccionar solo la Categoria Crearia un Servicio Generico de la Categoria
@@ -55,10 +58,13 @@
       label="Nombre"
       :rules="[{ required: true, message: 'name is required' }]"
     >
-      <el-input v-model="form.name" placeholder="ej: Justice International">
+      <el-input 
+      @input='passEvent'
+      v-model="orgForm3.name"
+      placeholder="ej: Justice International">
       </el-input>
     </el-form-item>
-
+  <!-- 
     <el-form-item label="Horario" required>
       <el-col class="line" :span="2"></el-col>
       <el-col :span="11">
@@ -94,130 +100,166 @@
       :rules="[{ required: true, message: 'name is required' }]"
     >
       <el-input
+        @input='passEvent'
+        v-model="orgForm3.des"
         type="textarea"
-        v-model="form.desc"
         placeholder="Explicacion: Lorem ipsum dolor sit amet consectetur adipisicing elit sit amet consectetur adipisicing elit."
       ></el-input>
     </el-form-item>
   </el-form>
+
+  {{ orgForm3.des }}
 </template>
 <script>
 export default {
   data() {
     return {
-      options: [
-        {
+       orgForm3: {
+         options: [{}],
+          name: '',
+          des:"",
+        //   options:[{
+        //   value: "pruebas covid-19",
+        //   label: "Pruebas Covid-19",
+        // }],
+         
+        //   options:[{
+        //   value: "pruebas covid-19",
+        //   label: "Pruebas Covid-19",
+        // }],
+       
+       
+        // opt: '',
+        // options:[{
+        //   value: "pruebas covid-19",
+        //   label: "Pruebas Covid-19",
+        // }]
+      }
+    }
+    },
+      methods:{
+    passEvent()
+    {
+      this.$emit('changeName',this.orgForm3)
+    }
+  },
+       options:[{
           value: "pruebas covid-19",
           label: "Pruebas Covid-19",
-        },
-        {
-          value: "vacunacion",
-          label: "Vacunacion",
-        },
-        {
-          value: "todo sobre covid-19",
-          label: "Todo sobre Covid-19",
-        },
-        {
-          value: "covid-19 ayudas",
-          label: "Covid-19 Ayudas",
-        },
-        {
-          value: "comida",
-          label: "Comida",
-        },
-        {
-          value: "salud",
-          label: "Salud",
-        },
-        {
-          value: "educación",
-          label: "Educación",
-        },
-        {
-          value: "transporte",
-          label: "Transporte",
-        },
-        {
-          value: "albergue y vivienda",
-          label: "Albergue y vivienda",
-        },
-        {
-          value: "necesidades de la vida diaria",
-          label: "Necesidades de la vida diaria",
-        },
-        {
-          value: "información y consejos generales",
-          label: "Información y consejos generales",
-        },
-        {
-          value: "internet y comunicaciones",
-          label: "Internet y comunicaciones",
-        },
-        {
-          value: "empleo",
-          label: "Empleo",
-        },
-        {
-          value: "emprendimiento",
-          label: "Emprendimiento",
-        },
-        {
-          value: "servicios públicos",
-          label: "Servicios públicos",
-        },
-        {
-          value: "religíon",
-          label: "Religíon",
-        },
-        {
-          value: "inmigracíon",
-          label: "Inmigracíon",
-        },
-        {
-          value: "legal",
-          label: "Legal",
-        },
-        {
-          value: "deportes, hobbies, clubes de entertenimiento",
-          label: "Deportes, Hobbies, Clubes de entertenimiento",
-        },
-        {
-          value: "musica, arte, cultura",
-          label: "Música, Arte, Cultura",
-        },
-      ],
-      ruleForm: {
-        date1: "",
-        date2: "",
-      },
-      rules: {
-        openTime: [
-          {
-            type: "date",
-            required: true,
-            message: "Por favor selecione la hora de apertura",
-            trigger: "change",
-          },
-        ],
-        closingTime: [
-          {
-            type: "date",
-            required: true,
-            message: "Por favor selecione la hora de cierre",
-            trigger: "change",
-          },
-        ],
-      },
-      form: {
-        name: "",
-        openTime: "",
-        closingTime: "",
-        desc: "",
-      },
-    };
-  },
-};
+        }]
+  // options: [
+  //       {
+  //         value: "pruebas covid-19",
+  //         label: "Pruebas Covid-19",
+  //       },
+      //   {
+      //     value: "vacunacion",
+      //     label: "Vacunacion",
+      //   },
+      //   {
+      //     value: "todo sobre covid-19",
+      //     label: "Todo sobre Covid-19",
+      //   },
+      //   {
+      //     value: "covid-19 ayudas",
+      //     label: "Covid-19 Ayudas",
+      //   },
+      //   {
+      //     value: "comida",
+      //     label: "Comida",
+      //   },
+      //   {
+      //     value: "salud",
+      //     label: "Salud",
+      //   },
+      //   {
+      //     value: "educación",
+      //     label: "Educación",
+      //   },
+      //   {
+      //     value: "transporte",
+      //     label: "Transporte",
+      //   },
+      //   {
+      //     value: "albergue y vivienda",
+      //     label: "Albergue y vivienda",
+      //   },
+      //   {
+      //     value: "necesidades de la vida diaria",
+      //     label: "Necesidades de la vida diaria",
+      //   },
+      //   {
+      //     value: "información y consejos generales",
+      //     label: "Información y consejos generales",
+      //   },
+      //   {
+      //     value: "internet y comunicaciones",
+      //     label: "Internet y comunicaciones",
+      //   },
+      //   {
+      //     value: "empleo",
+      //     label: "Empleo",
+      //   },
+      //   {
+      //     value: "emprendimiento",
+      //     label: "Emprendimiento",
+      //   },
+      //   {
+      //     value: "servicios públicos",
+      //     label: "Servicios públicos",
+      //   },
+      //   {
+      //     value: "religíon",
+      //     label: "Religíon",
+      //   },
+      //   {
+      //     value: "inmigracíon",
+      //     label: "Inmigracíon",
+      //   },
+      //   {
+      //     value: "legal",
+      //     label: "Legal",
+      //   },
+      //   {
+      //     value: "deportes, hobbies, clubes de entertenimiento",
+      //     label: "Deportes, Hobbies, Clubes de entertenimiento",
+      //   },
+      //   {
+      //     value: "musica, arte, cultura",
+      //     label: "Música, Arte, Cultura",
+      //   },
+      // ],
+      
+      // ruleForm: {
+      //   date1: "",
+      //   date2: "",
+      // },
+      // rules: {
+      //   openTime: [
+      //     {
+    //         type: "date",
+    //         required: true,
+    //         message: "Por favor selecione la hora de apertura",
+    //         trigger: "change",
+    //       },
+    //     ],
+    //     closingTime: [
+    //       {
+    //         type: "date",
+    //         required: true,
+    //         message: "Por favor selecione la hora de cierre",
+    //         trigger: "change",
+    //       },
+    //     ],
+    //   },
+    //   form: {
+    //     name: "",
+    //     openTime: "",
+    //     closingTime: "",
+    //     desc: "",
+    //   },
+    // };
+  }
 </script>
 
 <style>

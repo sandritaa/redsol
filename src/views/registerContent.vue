@@ -7,12 +7,16 @@
       <img :src="items[i]" />
     </el-carousel-item>
   </el-carousel>
+
+
   <br /><br />
   <br /><br />
+
   <!-- organization form layout -->
   <div v-if="isOrg == true">
     ORG FORM
-    {{ form }}
+    <!-- My name is: {{ formOrg.name }} -->
+    {{ formOrg }}
     <el-form label-width="-80px">
       <el-steps :active="selectedBar - 1" finish-status="success">
         <el-step title="Informacion"></el-step>
@@ -20,9 +24,9 @@
         <el-step title="Servicios"></el-step>
       </el-steps>
       <!-- <div v-if="selectedWidget == 1"><hey /></div> -->
-      <div v-if="selectedWidget == 1"><regOrg1 @changeName="changeNameParent($event)"/></div>
-      <div v-if="selectedWidget == 2"><regOrg2 /></div>
-      <div v-if="selectedWidget == 3"><regOrg3 /></div>
+      <div v-if="selectedWidget == 1"><regOrg1 @changeName="changeParentOrg($event)"/></div>
+      <div v-if="selectedWidget == 2"><regOrg2 @changeName="changeParentOrg($event)"/></div>
+      <div v-if="selectedWidget == 3"><regOrg3 @changeName="changeParentOrg($event)"/></div>
       <div v-if="selectedWidget == 4"><regOrg4 /></div>
  
     </el-form>
@@ -31,13 +35,13 @@
   <!-- beneficiary form layout -->
   <div v-else-if="isBen == true">
     BEN FORM
-
+   {{ formBen }}
     <el-form ref="form" :model="form" label-width="-80px">
       <el-steps :active="selectedBar - 1" finish-status="success">
         <el-step title="Informacion"></el-step>
         <el-step title="Confirmacion"></el-step>
       </el-steps>
-      <div v-if="selectedWidget == 1"><regBen1 /></div>
+      <div v-if="selectedWidget == 1"><regBen1 @change="changeParentBen($event)"/></div>
       <div v-if="selectedWidget == 2"><regBen2 /></div>
     </el-form>
   </div>
@@ -102,6 +106,8 @@
       >Next</el-button
     >
   </el-form-item>
+
+
 <!--   
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
@@ -127,10 +133,9 @@ export default {
       isOrg: false,
       isBen: false,
       items: [require("../assets/HomePage/1.jpg")],
-      form: {
-        name:"",
-        email:"",
-        desc:""
+      formOrg: {},
+      formBen: {
+      // name:"",
       } 
     };
   },
@@ -185,9 +190,30 @@ export default {
     toggleShowBenForm() {
       this.isBen = !this.isBen;
     },
-    changeNameParent(regOrg1_p) {
-      this.form.name = regOrg1_p.name
-    }
+    changeParentOrg(newObj) {
+      this.formOrg = Object.assign(this.formOrg,newObj)
+    },
+      changeParentBen(newBen) {
+      this.formBen = Object.assign(this.formBen,newBen)
+    },
+
+    
+    // changeParentO1(regOrg1_p) {
+    //   this.formOrg.name = regOrg1_p.name
+    // },
+    // changeParentO2(regOrg2_p) {
+    //   this.formOrg.email = regOrg2_p.
+    //   this.formOrg.email = regOrg2_p.email
+    // },
+    // changeParentO3(regOrg3_p) {
+    //   this.formOrg.desc = regOrg3_p.desc
+    // },
+    //  changeParentB1(regBen1_p) {
+    //   this.formBen.name = regBen1_p.name
+    // },
+    //  changeParent4(regOrg4_p) {
+    //   this.form.des = regOrg4_p.des
+    // }
   },
 };
 // };

@@ -6,9 +6,12 @@
       label="Nombre"
       :rules="[{ required: true, message: 'nombre es requerido' }]"
     >
-      <el-input v-model="form.name" placeholder="ej: Jose"></el-input>
+    <el-input 
+    @input='passEvent'
+    v-model="benForm1.name" 
+    placeholder="ej: Jose"></el-input>
     </el-form-item>
-
+  <!-- 
     <el-form-item
       label="Apellido"
       :rules="[{ required: true, message: 'apellido es requerido' }]"
@@ -45,28 +48,35 @@
 
     <h2> Ya tines una cuenta? </h2>
     <button @click="next">Inicia Sesion</button>
-
+ -->
 
   </el-form>
   
+{{ benForm1.name }}
 </template>
 <script>
 export default {
   data() {
     return {
-      form: {
+      benForm1: {
         name: "",
-        lastName: "",
-        correo:"",
-        password:"",
-        passwordCon:"",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
+        // lastName: "",
+        // correo:"",
+        // password:"",
+        // passwordCon:"",
+        // delivery: false,
+        // type: [],
+        // resource: "",
+        // desc: "",
       },
     };
   },
+
+   methods:{
+    passEvent() {
+      this.$emit('changeName',this.benForm1)
+    }
+  }
 };
 </script>
 
